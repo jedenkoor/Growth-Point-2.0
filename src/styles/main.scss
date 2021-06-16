@@ -1,53 +1,60 @@
 @import '~normalize.css';
 @import 'variables/mixins';
 @import 'variables/indents';
+@import 'variables/fonts';
 
 :root {
   --theme: light;
-  --primary: #5A8FF5;
-  --secondary:  #4146F5;
+  --primary: #5a8ff5;
+  --secondary: #4146f5;
   --secondary-light: rgba(65, 70, 245, 0.07);
-  --bacground-opacity:  rgba(25, 25, 25, 0.35);
-  --checkbox-surface: #F3F3F3;
-  --button-arrows-surface: #F7F7F7;
-  --surface: #FAFAFA;
-  --surface-menu: #FFFFFF;
-  --card-button-surface: #F9F9F9;
-  --card-surface: #FDFDFD;
-  --error: #F55A68;
+  --bacground-opacity: rgba(25, 25, 25, 0.35);
+  --checkbox-surface: #f3f3f3;
+  --button-arrows-surface: #f7f7f7;
+  --surface: #fafafa;
+  --surface-menu: #ffffff;
+  --card-button-surface: #f5f5f5;
+  --card-surface: #fdfdfd;
+  --error: #f55a68;
   --text-bright: #191919;
   --text-washy: #404040;
-  --text-caption: #9F9F9F;
-  --text-card-caption: #BFBFBF;
+  --text-caption: #9f9f9f;
+  --text-card-caption: #bfbfbf;
   --circle: rgba(0, 0, 0, 0.08);
   --circle-pale: rgba(0, 0, 0, 0.05);
   --circle-pale-pale: rgba(0, 0, 0, 0.03);
   --circle-pale-pale-pale: rgba(0, 0, 0, 0.02);
-  --selection-color: #191919;
-  --img-selection-color: #191919;
+  --selection-color: rgba(25, 25, 25, 0.99);
+  --img-selection-color: rgba(25, 25, 25, 0.5);
+  --shadow: 0px 10px 20px rgba(3, 3, 3, 0.04);
+  --shadow-card: 1px 2px 10px rgba(255, 255, 255, 0.07);
 }
 
-.dark-theme{
+.dark-theme {
   --theme: dark;
-  --primary: #3F7CF3;
-  --secondary:  #4C50F6;
+  --primary: #3f7cf3;
+  --secondary: #4c50f6;
   --secondary-light: rgba(76, 80, 246, 0.2);
-  --bacground-opacity:  rgba(23, 23, 23, 0.8);
+  --bacground-opacity: rgba(23, 23, 23, 0.8);
   --checkbox-surface: #202020;
-  --button-arrows-surface: #1F1F1F;
+  --button-arrows-surface: #1f1f1f;
   --surface: #171717;
-  --surface-menu:  #1E1E1E;
+  --surface-menu: #1e1e1e;
   --card-button-surface: #282828;
-  --card-surface: #1E1E1E;
-  --error:  #F33F4F;
-  --text-bright:  #E1E1E1;
-  --text-washy:  #CDCDCD;
-  --text-caption:  #666666;
-  --text-card-caption: #4D4D4D;
+  --card-surface: #1e1e1e;
+  --error: #f33f4f;
+  --text-bright: #e1e1e1;
+  --text-washy: #cdcdcd;
+  --text-caption: #666666;
+  --text-card-caption: #4d4d4d;
   --circle: rgba(255, 255, 255, 0.08);
   --circle-pale: rgba(255, 255, 255, 0.06);
   --circle-pale-pale: rgba(255, 255, 255, 0.04);
   --circle-pale-pale-pale: rgba(255, 255, 255, 0.03);
+  --selection-color: rgba(225, 225, 225, 0.99);
+  --img-selection-color: rgba(225, 225, 225, 0.5);
+  --shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  --shadow-card: 1px 2px 10px rgba(255, 255, 255, 0.07);
 }
 
 ::selection {
@@ -92,10 +99,11 @@ html.compensate-for-scrollbar {
 
 html {
   background-color: var(--surface);
+  transition: background-color 0.2s;
 }
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Commissioner', sans-serif;
   color: var(--text-bright);
   font-size: 18px;
   line-height: 24px;
@@ -120,7 +128,7 @@ body {
 
 .container {
   width: 100%;
-  max-width: 1352px;
+  max-width: 1356px;
   margin: 0 auto;
   padding: $padding-container;
   @include w767 {
@@ -271,3 +279,4 @@ textarea {
 
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
+@import 'blocks/mainpage/banner';

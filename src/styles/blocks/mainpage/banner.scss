@@ -1,0 +1,45 @@
+.banner {
+  padding-top: 118px;
+  &__title {
+    margin-top: 0;
+    margin-bottom: 47px;
+    font-family: 'Noir Pro';
+    font-weight: 600;
+    font-size: 88px;
+    line-height: 72px;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+  }
+  &__rotate {
+    float: left;
+    max-height: 218px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: right;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: translate(-16px) rotate(180deg);
+  }
+  &__slider {
+    width: 466px;
+
+    margin-left: 112px;
+  }
+  &-slider {
+    &__wrapper {
+      padding-left: 0;
+      list-style: none;
+    }
+    &__slide {
+      padding-right: 133px;
+    }
+    &-slide {
+      &__title {
+        margin-top: 0;
+        margin-bottom: 9px;
+        font-weight: 600;
+      }
+    }
+  }
+}
