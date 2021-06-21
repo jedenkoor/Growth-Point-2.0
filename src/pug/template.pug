@@ -30,8 +30,17 @@ html(lang="ru")
     <link href="https://fonts.googleapis.com/css2?family=Commissioner:wght@400;600&display=swap" rel="stylesheet">
 
   body
+    if(breadcrumbs === 0)
+      style. 
+        .breadcrumbs{
+          display: none
+        }
+
     .wrapper
       include includes/header.pug
       main.content
         block content
+        if(form != 0)
+          include includes/callback.pug
+      include includes/popup.pug
       include includes/footer.pug

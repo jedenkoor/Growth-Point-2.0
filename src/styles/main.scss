@@ -10,12 +10,12 @@
   --secondary-light: rgba(65, 70, 245, 0.07);
   --bacground-opacity: rgba(25, 25, 25, 0.35);
   --checkbox-surface: #f3f3f3;
-  --button-arrows-surface: #f7f7f7;
+  --button-arrows-surface: #f3f3f3;
   --surface: #fafafa;
   --surface-menu: #ffffff;
   --card-button-surface: #f5f5f5;
   --card-surface: #fdfdfd;
-  --error: #f55a68;
+  --error: #f33f4f;
   --text-bright: #191919;
   --text-washy: #404040;
   --text-caption: #9f9f9f;
@@ -32,21 +32,21 @@
 
 .dark-theme {
   --theme: dark;
-  --primary: #3f7cf3;
-  --secondary: #4c50f6;
-  --secondary-light: rgba(76, 80, 246, 0.2);
-  --bacground-opacity: rgba(23, 23, 23, 0.8);
-  --checkbox-surface: #202020;
-  --button-arrows-surface: #1f1f1f;
-  --surface: #171717;
-  --surface-menu: #1e1e1e;
-  --card-button-surface: #282828;
-  --card-surface: #1e1e1e;
-  --error: #f33f4f;
-  --text-bright: #e1e1e1;
-  --text-washy: #cdcdcd;
-  --text-caption: #666666;
-  --text-card-caption: #4d4d4d;
+  --primary: #9ccbfc;
+  --secondary: #9d9cfc;
+  --secondary-light: rgba(110, 145, 253, 0.15);
+  --bacground-opacity: rgba(23, 23, 23, 0.7);
+  --checkbox-surface: #292929;
+  --button-arrows-surface: #2e2e2e;
+  --surface: #1a1a1a;
+  --surface-menu: #303030;
+  --card-button-surface: #3d3d3d;
+  --card-surface: #212121;
+  --error: #fc9ccb;
+  --text-bright: #f4f4f4;
+  --text-washy: #e0e0e0;
+  --text-caption: #8c8c8c;
+  --text-card-caption: #737373;
   --circle: rgba(255, 255, 255, 0.08);
   --circle-pale: rgba(255, 255, 255, 0.06);
   --circle-pale-pale: rgba(255, 255, 255, 0.04);
@@ -82,7 +82,7 @@ img::-moz-selection {
     border-radius: 2px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--surface);
+    background: var(--surface-menu);
   }
 }
 
@@ -110,6 +110,7 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
+  transition: color 0.2s;
 }
 
 .wrapper {
@@ -117,13 +118,14 @@ body {
   flex-direction: column;
   height: 100%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .content {
   position: relative;
   z-index: 0;
   flex: 1;
-  overflow-x: hidden;
+  counter-reset: casepart;
 }
 
 .container {
@@ -131,6 +133,12 @@ body {
   max-width: 1356px;
   margin: 0 auto;
   padding: $padding-container;
+  @media screen and (max-width: 1480px) {
+    padding: 0 90px 0 18px;
+  }
+  @include w1023 {
+    padding: $padding-container;
+  }
   @include w767 {
     padding: $mobile-padding-container;
   }
@@ -211,6 +219,7 @@ input[type='number'] {
 }
 
 .title {
+  font-family: 'Noir Pro';
   margin-top: 0;
   margin-bottom: 51px;
   font-weight: 600;
@@ -220,63 +229,127 @@ input[type='number'] {
   text-transform: uppercase;
 }
 
-input,
-textarea {
+input {
+  display: block;
   width: 100%;
-  padding: 0 15px;
-  border: 1px solid #c4c4c4;
-  border-radius: 3px;
-  background: transparent;
-  font-size: 16px;
-  line-height: 23px;
-  letter-spacing: 0.01em;
-  // color: var(--main-on-surface);
-  transition: border-color 0.2s;
-  @include w1023 {
-    font-size: 14px;
-    line-height: 20px;
-  }
+  height: 44px;
+  padding: 0;
+  background-color: var(--surface);
+  border: none;
+  border-radius: none;
+  border-bottom: 1px solid var(--circle);
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--text-bright);
+  transition: 0.2s;
   &:hover,
   &:focus {
-    // border-color: var(--accent);
+    border-color: var(--primary);
   }
   &::placeholder {
-    // color: $neutrals-6;
+    color: var(--text-caption);
   }
   &.input-err {
-    // border-color: var(--error);
+    border-color: var(--error);
   }
   &.input-border {
-    // border-color: var(--accent);
+    border-color: var(--primary);
   }
   &:-webkit-autofill,
   &:-webkit-autofill:hover,
   &:-webkit-autofill:focus,
   &:-webkit-autofill:active {
-    // box-shadow: 0 0 0px 1000px var(--surface) inset;
-    // -webkit-box-shadow: 0 0 0px 1000px var(--surface) inset;
-    // transition: background-color 5000s ease-in-out 0s;
-    // -webkit-text-fill-color: var(--main-on-surface);
+    box-shadow: 0 0 0px 1000px var(--surface) inset;
+    -webkit-box-shadow: 0 0 0px 1000px var(--surface) inset;
+    transition: background-color 5000s ease-in-out 0s;
+    -webkit-text-fill-color: var(--text-bright);
   }
 }
 
-input {
-  height: 49px;
-  @include w1023 {
-    height: 46px;
+.swiper {
+  &-button {
+    &-prev,
+    &-next {
+      width: 30px;
+      height: 30px;
+      padding: 3px;
+      border-radius: 50%;
+      background-color: var(--button-arrows-surface);
+      transition: background-color 0.2s;
+      &:after {
+        display: none;
+      }
+      path {
+        stroke: var(--text-bright);
+        transition: stroke 0.2s;
+      }
+    }
   }
 }
 
-textarea {
-  display: block;
-  height: 137px;
-  padding: 13px 15px;
-  resize: none;
-  @include w1023 {
-    height: 180px;
+.primary-btn {
+  display: inline-block;
+  border: 1px solid transparent;
+  border-radius: 0;
+  text-align: center;
+  font-family: 'Noir Pro';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  background: var(--text-bright);
+  color: var(--surface);
+  transition: color 0.2s, background-color 0.2s;
+}
+
+.secondary-btn {
+  display: inline-block;
+  border: 1px solid var(--text-bright);
+  border-radius: 0;
+  text-align: center;
+  font-family: 'Noir Pro';
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  background: none;
+  color: var(--text-bright);
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.tertiary-btn {
+  display: inline-block;
+  background-color: var(--checkbox-surface);
+  border-radius: 30px;
+  transition: background-color 0.2s;
+  cursor: pointer;
+  @include hover {
+    &:hover {
+      background-color: var(--text-bright);
+      color: var(--surface);
+    }
+  }
+  @include active {
+    &:active {
+      background-color: var(--text-bright);
+      color: var(--surface);
+    }
   }
 }
 
 @import 'blocks/common/header';
 @import 'blocks/common/footer';
+@import 'blocks/common/callback';
+@import 'blocks/common/popup';
 @import 'blocks/mainpage/banner';
+@import 'blocks/mainpage/projects';
+@import 'blocks/mainpage/services';
+@import 'blocks/mainpage/why';
+@import 'blocks/otherpages/projectspage';
+@import 'blocks/otherpages/case';
+@import 'blocks/otherpages/contacts';
+@import 'blocks/otherpages/text';
+@import 'blocks/otherpages/404';

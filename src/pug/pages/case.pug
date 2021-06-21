@@ -1,0 +1,81 @@
+extends ../template
+
+block variables
+  - var title = 'Страница проекта'
+
+block content
+  section.case.margin-section
+    .container
+      h1.title Балтдорстрой
+      .case__nav.case-nav
+        a.case-nav__col(href="#") 
+          .case-nav__btn
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.59961 15.0001L12.8663 10.7334M8.59961 15.0001L12.8663 19.2667M8.59961 15.0001H21.9329"/>
+            </svg>
+          .case-nav__info
+            p.case-nav__title Предыдущий проект
+            span.case-nav__category Медицина
+        a.case-nav__col(href="#") 
+          .case-nav__btn
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.3997 11.9999L14.1331 7.73327M18.3997 11.9999L14.1331 16.2666M18.3997 11.9999L5.06641 11.9999"/>
+            </svg>  
+          .case-nav__info
+            p.case-nav__title Следующий проект
+            span.case-nav__category Фарма
+      .case__info.case-info
+        .case-info__row.case-info__row--header 
+          span.case-info__col Заказчик
+          span.case-info__col Сайт
+          span.case-info__col Год
+          span.case-info__col Проект
+          span.case-info__col Работы
+        .case-info__row
+          span.case-info__col Таможенная ertrytryetyкарта
+          span.case-info__col
+            a(href="#")  link
+          span.case-info__col 2020
+          span.case-info__col Спроектировали международный продукт проективк международный продукт, который позволкуцаыв
+          span.case-info__col 
+            span graphic design
+            span UI/UX
+            span frontend
+            span produck dev
+      .case__slider.case-slider.swiper-container
+        .case-slider__wrapper.swiper-wrapper 
+          .case-slider__slide.case-slider-slide.swiper-slide
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.case-slider-slide__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .case-slider__slide.case-slider-slide.swiper-slide
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.case-slider-slide__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .case-slider__slide.case-slider-slide.swiper-slide
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.case-slider-slide__img(src="images/preview.jpg" alt="Балтдорстрой")
+        .swiper-pagination
+        .swiper-button-prev
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.60026 11.9999L9.86693 16.2666M5.60026 11.9999L9.86693 7.73328M5.60026 11.9999L18.9336 11.9999"/>
+          </svg>
+        .swiper-button-next
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M18.3997 12.0001L14.1331 7.73339M18.3997 12.0001L14.1331 16.2667M18.3997 12.0001L5.06641 12.0001"/>
+          </svg>
+  section.case-part.margin-section
+    .container
+      .case-part__top 
+        h2.case-part__title Главная
+      picture
+        source(type="image/webp" srcset="images/preview.jpg")
+        img.case-part__img(src="images/preview.jpg" alt="Балтдорстрой | Главная")
+  section.case-part.margin-section
+    .container
+      .case-part__top 
+        h2.case-part__title Каталог
+      picture
+        source(type="image/webp" srcset="images/preview.jpg")
+        img.case-part__img(src="images/preview.jpg" alt="Балтдорстрой | Каталог")

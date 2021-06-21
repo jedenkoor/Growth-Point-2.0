@@ -1,0 +1,37 @@
+.notfound {
+  height: calc(100vh - 184px);
+  min-height: 591px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    padding-top: 2.1vh;
+  }
+  &__title {
+    margin-top: 0;
+    margin-bottom: 51px;
+    font-family: 'Noir Pro';
+    font-weight: 600;
+    font-size: 225px;
+    line-height: 270px;
+    letter-spacing: 0.02em;
+  }
+  &__text {
+    margin-bottom: 51px;
+    text-align: center;
+  }
+  &__btns {
+    display: flex;
+    @include w767 {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+  }
+  &__btn {
+    padding: 13px 24px;
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

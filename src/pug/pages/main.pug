@@ -2,20 +2,215 @@ extends ../template
 
 block variables
   - var title = 'Главная'
+  - var breadcrumbs = 0
 
 block content
   section.banner 
+    .container.banner__container
+      .banner__col
+        h1.banner__title Точка роста —
+        p.banner__rotate Значимость проблем слонов измерить сложно
+        .banner__slider.banner-slider.swiper-container
+          .banner-slider__wrapper.swiper-wrapper
+            .banner-slider__slide.banner-slider-slide.swiper-slide
+              h4.banner-slider-slide__title Мы создаем уникальные условия
+              p.banner-slider-slide__text Наши заказчики получают имеют возможность наблюдать за процессом работы онлайн через личный кабинет
+            .banner-slider__slide.banner-slider-slide.swiper-slide
+              h4.banner-slider-slide__title Мы создаем
+              p.banner-slider-slide__text Наблюдай за процессом работы онлайн через личный кабинет
+            .banner-slider__slide.banner-slider-slide.swiper-slide
+              h4.banner-slider-slide__title Уникальные условия
+              p.banner-slider-slide__text Наши заказчики получают имеют возможность наблюдать
+          .swiper-button-prev
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5.60026 11.9999L9.86693 16.2666M5.60026 11.9999L9.86693 7.73328M5.60026 11.9999L18.9336 11.9999"/>
+            </svg>
+          .swiper-button-next
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.3997 12.0001L14.1331 7.73339M18.3997 12.0001L14.1331 16.2667M18.3997 12.0001L5.06641 12.0001"/>
+            </svg>
+        .banner__btns
+          button.primary-btn.banner__btn Оформить заявку
+          a.secondary-btn.banner__btn(href="#") Смотреть портфолио
+      .banner__col
+        ul.banner__services 
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Создание дизайна
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Разработка
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Start-Up поддержка
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Консультация
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Обслуживание
+          li.banner__service.banner-service
+            a.banner-service__link(href="#") Комплексное решение
+        .banner__circles 
+          .banner__circle(style="background-color: var(--circle-pale)")
+          .banner__circle(style="background-color: var(--circle)")
+          .banner__circle(style="background-color: var(--circle-pale)")
+          .banner__circle(style="background-color: var(--circle)")
+          .banner__circle(style="background-color: var(--circle-pale)")
+          .banner__circle(style="background-color: var(--text-bright)")
+          .banner__circle(style="background-color: var(--primary)")
+
+  section.projects.margin-section 
     .container 
-      h1.banner__title Точка роста —
-      p.banner__rotate Значимость проблем слонов измерить сложно
-      .banner__slider.banner-slider.swiper-container
-        ul.banner-slider__wrapper.swiper-wrapper
-          li.banner-slider__slide.banner-slider-slide.swiper-slide
-            h4.banner-slider-slide__title Мы создаем уникальные условия
-            p.banner-slider-slide__text Наши заказчики получают имеют возможность наблюдать за процессом работы онлайн через личный кабинет
-          li.banner-slider__slide.banner-slider-slide.swiper-slide
-            h4.banner-slider-slide__title Мы создаем
-            p.banner-slider-slide__text Наблюдай за процессом работы онлайн через личный кабинет
-          li.banner-slider__slide.banner-slider-slide.swiper-slide
-            h4.banner-slider-slide__title Уникальные условия
-            p.banner-slider-slide__text Наши заказчики получают имеют возможность наблюдать
+      h2.title Наши проекты
+      ul.projects__list
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+      a.primary-btn.projects__more(href="#") Смотреть портфолио
+
+  section.services.margin-section 
+    .container 
+      h2.title Наши услуги
+      ul.services__list
+        li.services__item.services-item
+          <svg class="services-item__icon" width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="63.5" cy="29.5" r="22.5" fill="var(--circle-pale)"/>
+            <circle cx="30" cy="30" r="30" fill="var(--circle-pale)"/>
+            <circle cx="85.5" cy="29.5" r="14.5" fill="var(--text-bright)"/>
+            <circle cx="89" cy="27.0001" r="5" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Создание дизайна
+          p.services-item__descr Задача организации, в особенности же постоянный количественный рост и сфера нашей активности
+          button.services-item__btn Оформить заявку
+        li.services__item.services-item
+          <svg class="services-item__icon" width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="70" cy="29.9999" r="30" fill="var(--circle-pale)"/>
+            <circle cx="20.5" cy="30.4999" r="20.5" fill="var(--circle-pale)"/>
+            <circle cx="40.5" cy="30.4999" r="11.5" fill="var(--text-bright)"/>
+            <circle cx="42" cy="26" r="5" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Start-Up поддержка
+          p.services-item__descr Идейные соображения высшего порядка, а также укрепление роста и развитие структуры играет 
+          button.services-item__btn Оформить заявку
+        li.services__item.services-item
+          <svg class="services-item__icon" width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="23.5" cy="29.5" r="23.5" fill="var(--circle-pale)"/>
+            <circle cx="76.5" cy="29.5" r="23.5" fill="var(--circle-pale)"/>
+            <circle cx="51.5" cy="29.5" r="17.5" fill="var(--text-bright)"/>
+            <circle cx="49.5" cy="38.5" r="5.5" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Разработка
+          p.services-item__descr Укрепление роста и развитие структуры важную роль роли в формировании мест активности
+          button.services-item__btn Оформить заявку
+        li.services__item.services-item
+          <svg class="services-item__icon" width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="77.5" cy="37.5" r="22.5" fill="var(--circle-pale)"/>
+            <circle cx="30" cy="30" r="30" fill="var(--circle-pale)"/>
+            <circle cx="60" cy="25" r="23" fill="var(--text-bright)"/>
+            <circle cx="68" cy="20" r="9" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Обслуживание
+          p.services-item__descr Задача организации, в особенности же постоянный количественный рост и сфера нашей активности требуют
+          button.services-item__btn Оформить заявку
+        li.services__item.services-item
+          <svg class="services-item__icon" width="82" height="60" viewBox="0 0 82 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="59.5" cy="37.5" r="22.5" fill="var(--circle-pale)"/>
+            <circle cx="30" cy="30" r="30" fill="var(--circle-pale)"/>
+            <circle cx="38.5" cy="31.5" r="14.5" fill="var(--text-bright)"/>
+            <circle cx="42" cy="27" r="5" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Консультация
+          p.services-item__descr Задача организации, в особенности же постоянный количественный рост и сфера нашей активности
+          button.services-item__btn Оформить заявку
+        li.services__item.services-item
+          <svg class="services-item__icon" width="100" height="60" viewBox="0 0 100 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="42" cy="29.9999" r="19" fill="var(--circle-pale)"/>
+            <circle cx="14.5" cy="29.4999" r="14.5" fill="var(--circle-pale)"/>
+            <circle cx="77.5" cy="29.5" r="22.5" fill="var(--text-bright)"/>
+            <circle cx="77.5" cy="29.5" r="6.5" fill="var(--primary)"/>
+          </svg>
+          h3.services-item__title Комплексное решение
+          p.services-item__descr С другой стороны реализация намеченных плановых заданий требуют определения и уточнения
+          button.services-item__btn Оформить заявку
+
+  section.why.margin-section 
+    .container 
+      h2.title Почему выбирают нас?
+      .why__content
+        .why__col
+          .why__slider.why-slider.swiper-container 
+            .why-slider__wrapper.swiper-wrapper 
+              .why-slider__slide.why-slider-slide.swiper-slide 
+                picture
+                  source(type="image/webp" srcset="images/preview.jpg")
+                  img.why-slider-slide__img(src="images/preview.jpg" alt="Почему выбирают нас?")
+              .why-slider__slide.why-slider-slide.swiper-slide 
+                picture
+                  source(type="image/webp" srcset="images/preview.jpg")
+                  img.why-slider-slide__img(src="images/preview.jpg" alt="Почему выбирают нас?")
+              .why-slider__slide.why-slider-slide.swiper-slide 
+                picture
+                  source(type="image/webp" srcset="images/preview.jpg")
+                  img.why-slider-slide__img(src="images/preview.jpg" alt="Почему выбирают нас?")
+            .swiper-button-prev
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M5.60026 11.9999L9.86693 16.2666M5.60026 11.9999L9.86693 7.73328M5.60026 11.9999L18.9336 11.9999"/>
+              </svg>
+            .swiper-button-next
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18.3997 12.0001L14.1331 7.73339M18.3997 12.0001L14.1331 16.2667M18.3997 12.0001L5.06641 12.0001"/>
+              </svg>
+          picture
+            source(type="image/webp" srcset="images/preview.jpg")
+            img.why__img(src="images/preview.jpg" alt="Почему выбирают нас?")
+        .why__col
+          h3.why__subtitle Слоновий вой вызывает 
+          p.why__text Повседневная практика показывает, что дальше развитие различных форм деятельности позволяет оценить значение соответствующий условий снова активизации. Повседневная практика показывает, что новая модель организационной модели сегодня.
+          h3.why__subtitle Cтрах у младенцев
+          p.why__text Что сложившаяся структура организации позволяет выполнять важные задания по разработке позиций, занимаемых участниками в отношении поставленных задач. Не следует, однако забывать, что новая модель организационной деятельности в значительной степени обуславливает создание системы обучения кадров. Идейные соображения высшего порядка, а также укрепление и развитие структуры требуют определения и уточнения направлений прогрессивного развития. Разнообразный и богатый опыт новая модель организационной деятельности представляет собой интересный эксперимент проверки соответствующий условий активизации.
+          button.primary-btn.why__btn Оформить заявку
+

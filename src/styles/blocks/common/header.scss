@@ -1,5 +1,8 @@
 .header {
-  padding: 32px 0;
+  &__container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
   &__logo {
     display: flex;
     width: max-content;
@@ -141,7 +144,6 @@
       color: var(--text-washy);
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      transition: color 0.2s;
     }
     &__lk {
       display: flex;
@@ -219,7 +221,7 @@
     &__list {
       position: fixed;
       top: 0;
-      right: 70px;
+      right: 68px;
       bottom: 0;
       width: 457px;
       padding-left: 0;
@@ -258,8 +260,48 @@
       line-height: 20px;
       letter-spacing: 0.05em;
       text-transform: uppercase;
-      transition: 0s !important;
+      transition-delay: 0s !important;
       color: var(--text-bright);
+    }
+  }
+}
+
+.breadcrumbs {
+  margin-top: 19px;
+  margin-bottom: 44px;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    list-style: none;
+  }
+  &__item {
+    margin-bottom: 7px;
+    &:not(:last-child) {
+      display: flex;
+      align-items: center;
+      &:after {
+        content: '/';
+        margin: 0 10px;
+      }
+    }
+  }
+  &__link {
+    &:not(a) {
+      color: var(--text-caption);
+    }
+    &:any-link {
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--primary);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+        }
+      }
     }
   }
 }

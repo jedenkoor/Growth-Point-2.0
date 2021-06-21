@@ -33,3 +33,13 @@
     @content;
   }
 }
+@mixin hover {
+  @media (any-hover: hover) and (pointer: fine) {
+    @content;
+  }
+}
+@mixin active {
+  @media (any-pointer: coarse) {
+    @content;
+  }
+}

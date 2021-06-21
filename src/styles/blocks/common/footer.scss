@@ -1,0 +1,20 @@
+.footer {
+  padding: 20px 0;
+  background-color: var(--card-surface);
+  transition: background-color 0.2s;
+  &__container {
+    display: flex;
+    align-items: center;
+  }
+  &__logo {
+    flex: 0 0 315px;
+    margin-right: 132px;
+  }
+  &__link {
+    margin-right: auto;
+    color: var(--text-washy);
+  }
+  &__copyright {
+    color: var(--text-card-caption);
+  }
+}

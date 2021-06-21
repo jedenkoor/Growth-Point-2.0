@@ -1,0 +1,20 @@
+.contacts {
+  &__map {
+    height: 504px;
+    .ymaps-2-1-78-copyrights-pane,
+    .ymaps-2-1-78-controls__toolbar,
+    .ymaps-2-1-78-controls__bottom {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      clip: rect(0 0 0 0);
+    }
+    [class*='ymaps-2'][class*='-ground-pane'] {
+      filter: saturate(0) brightness(0.9);
+    }
+  }
+}

@@ -2,6 +2,8 @@ extends ../template
 
 block variables
   - var title = 'Карта сайта'
+  - var form = 0
+  - var breadcrumbs = 0
 
 block content
   style.
@@ -21,7 +23,7 @@ block content
       transition: background-color .1s
     }
     td:hover{
-      background-color: var(--bacground-opacity);
+      background-color: var(--circle-pale);
     }
     td a{
       display: block;
@@ -53,3 +55,20 @@ block content
         tr
           td 
             a(href="main.html" target="_blank") Главная
+        tr
+          td 
+            a(href="projects.html" target="_blank") Проекты
+          td 
+            a(href="case.html" target="_blank") Страница проекта
+        tr
+          td 
+            a(href="about.html" target="_blank") О студии
+        tr
+          td 
+            a(href="contacts.html" target="_blank") Контакты
+        tr
+          td 
+            a(href="text.html" target="_blank") Текстовая страница
+        tr
+          td 
+            a(href="404.html" target="_blank") 404

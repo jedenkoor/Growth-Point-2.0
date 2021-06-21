@@ -1,0 +1,41 @@
+.projectpage {
+  &__top {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 51px;
+  }
+  &__title {
+    margin-bottom: 0;
+    margin-right: 32px;
+  }
+  &__filter {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 31px;
+    padding-left: 0;
+    list-style: none;
+  }
+  &-filter {
+    &__reset {
+      transform: translateY(-16px);
+      display: flex;
+      align-items: center;
+      padding: 0;
+      background: none;
+      border: none;
+      font-size: 16px;
+      line-height: 21px;
+      color: var(--text-caption);
+      cursor: pointer;
+      path {
+        stroke: var(--text-caption);
+      }
+    }
+    &__item {
+      margin-bottom: 20px;
+      &:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
+}

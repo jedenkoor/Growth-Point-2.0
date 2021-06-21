@@ -1,0 +1,135 @@
+extends ../template
+
+block variables
+  - var title = 'Проекты'
+
+block content
+  section.projectpage.margin-section
+    .container 
+      .projectpage__top 
+        h1.title.projectpage__title Наши проекты
+        button.projectpage-filter__reset 
+          | Сбросить фильтр
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M8.80078 8.7998L15.2008 15.1998M8.80078 15.1998L15.2008 8.7998"/>
+          </svg>
+      ul.projectpage__filter.projectpage-filter
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Медицина
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Недвижимость
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Банки
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Еда
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn IT
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Образование
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Логистика
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Мебель
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Промышленность
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Ecommerce
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Фарма
+        li.projectpage-filter__item
+          label.callback-form-services__label
+            input.visually-hidden(type="checkbox")
+            span.tertiary-btn Детские товары
+      ul.projects__list
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+        li.projects__item.projects-item
+          a.projects-item__link(href="#") 
+            picture
+              source(type="image/webp" srcset="images/preview.jpg")
+              img.projects-item__img(src="images/preview.jpg" alt="Балтдорстрой")
+          .projects-item__info 
+            <svg class="projects-item__decor" width="14" height="12" viewBox="0 0 14 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="12" height="12" rx="6"/>
+              <rect x="6" y="2" width="8" height="8" rx="4"/>
+            </svg>
+            h3.projects-item__title Балтдорстрой
+            p.projects-item__descr Наши заказчики получают имеют возможность наблюдать за процессом прогулки по луне вместе
+            span.projects-item__span Медицина . 2021
+            a.projects-item__btn(href="#") 
+              <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M21.3997 15.0001L17.1331 10.7334M21.3997 15.0001L17.1331 19.2667M21.3997 15.0001L8.06641 15.0001"/>
+              </svg>
+
+
