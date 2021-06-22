@@ -1,6 +1,7 @@
 .contacts {
   &__map {
     height: 504px;
+    margin-bottom: 51px;
     .ymaps-2-1-78-copyrights-pane,
     .ymaps-2-1-78-controls__toolbar,
     .ymaps-2-1-78-controls__bottom {
@@ -15,6 +16,62 @@
     }
     [class*='ymaps-2'][class*='-ground-pane'] {
       filter: saturate(0) brightness(0.9);
+    }
+  }
+  &__info {
+    display: flex;
+    padding: 30px 5px;
+    list-style: none;
+    background-color: var(--card-surface);
+    box-shadow: var(--shadow);
+    transition: background-color 0.2s, box-shadow 0.2s;
+  }
+  &-info {
+    &__col {
+      flex: 0 0 343px;
+      padding: 0 30px;
+      &:not(:last-child) {
+        border-right: 1px solid var(--circle-pale);
+      }
+      &:nth-child(2) {
+        flex: 0 0 26.1%;
+      }
+      &:last-child {
+        flex: 1;
+      }
+    }
+    &__title {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-family: 'Noir Pro';
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 32px;
+      letter-spacing: 0.01em;
+      text-transform: uppercase;
+    }
+    &__socials {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-gap: 12px 30px;
+      padding-left: 0;
+      list-style: none;
+    }
+    &__social {
+      flex: 0 0 50%;
+    }
+    &-social {
+      &__link {
+        display: flex;
+        align-items: center;
+        svg {
+          margin-right: 9px;
+        }
+        path {
+          stroke: var(--text-bright);
+          transition: stroke 0.2s;
+        }
+      }
     }
   }
 }

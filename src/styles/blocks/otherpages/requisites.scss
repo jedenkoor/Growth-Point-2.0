@@ -1,0 +1,25 @@
+.requisites {
+  &__row {
+    display: flex;
+    max-width: 873px;
+    padding: 18px 0;
+    font-size: 20px;
+    line-height: 27px;
+    &:first-of-type {
+      padding-top: 0;
+    }
+    &:last-of-type {
+      padding-bottom: 0;
+    }
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--circle-pale);
+    }
+  }
+  &__title {
+    flex: 0 0 51.2%;
+    color: var(--text-caption);
+  }
+  &__text {
+    flex: 1;
+  }
+}

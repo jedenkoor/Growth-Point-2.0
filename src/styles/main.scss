@@ -111,6 +111,10 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   -webkit-font-smoothing: antialiased;
   transition: color 0.2s;
+  @include w1023 {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }
 
 .wrapper {
@@ -351,5 +355,7 @@ input {
 @import 'blocks/otherpages/projectspage';
 @import 'blocks/otherpages/case';
 @import 'blocks/otherpages/contacts';
+@import 'blocks/otherpages/requisites';
+@import 'blocks/otherpages/about';
 @import 'blocks/otherpages/text';
 @import 'blocks/otherpages/404';

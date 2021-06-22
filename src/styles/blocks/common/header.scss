@@ -2,10 +2,20 @@
   &__container {
     padding-top: 32px;
     padding-bottom: 32px;
+    @include w1023 {
+      padding-top: 24px;
+      padding-bottom: 24px;
+    }
   }
   &__logo {
     display: flex;
     width: max-content;
+    svg {
+      @include w1023 {
+        width: 133px;
+        height: auto;
+      }
+    }
     path {
       fill: var(--text-bright);
       transition: fill 0.2s;
@@ -85,6 +95,9 @@
       padding: 43px 16px 52px;
       background-color: var(--surface-menu);
       transition: background-color 0.2s;
+      @include w1023 {
+        display: none;
+      }
     }
     &__burger {
       margin-bottom: 34px;
@@ -231,6 +244,9 @@
       background-color: var(--card-surface);
       padding-top: 72px;
       padding-left: 112px;
+      @include w1023 {
+        right: 0;
+      }
     }
     &__item {
       display: flex;
@@ -269,6 +285,10 @@
 .breadcrumbs {
   margin-top: 19px;
   margin-bottom: 44px;
+  @include w1023 {
+    margin-top: 16px;
+    margin-bottom: 33px;
+  }
   &__container {
     display: flex;
     align-items: center;
