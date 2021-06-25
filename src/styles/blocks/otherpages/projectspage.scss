@@ -3,10 +3,20 @@
     display: flex;
     align-items: flex-end;
     margin-bottom: 51px;
+    @include w1023 {
+      margin-bottom: 40px;
+    }
+    @include w767 {
+      position: relative;
+      margin-bottom: 43px;
+    }
   }
   &__title {
     margin-bottom: 0;
     margin-right: 32px;
+    @include w1023 {
+      margin-right: 29px;
+    }
   }
   &__filter {
     display: flex;
@@ -14,6 +24,22 @@
     margin-bottom: 31px;
     padding-left: 0;
     list-style: none;
+    @include w1023 {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      transform: translateX(-16px);
+      padding-left: 16px;
+      width: 100vw;
+    }
+    @include w767 {
+      margin-bottom: 77px;
+    }
+    &:after {
+      @include w1023 {
+        content: '';
+        flex: 0 0 16px;
+      }
+    }
   }
   &-filter {
     &__reset {
@@ -27,14 +53,35 @@
       line-height: 21px;
       color: var(--text-caption);
       cursor: pointer;
+      @include w1023 {
+        transform: translateY(-7px);
+      }
+      @include w767 {
+        position: absolute;
+        bottom: -123px;
+        transform: none;
+        font-size: 14px;
+        line-height: 19px;
+      }
       path {
         stroke: var(--text-caption);
       }
     }
     &__item {
       margin-bottom: 20px;
+      @include w1023 {
+        margin-bottom: 9px;
+      }
       &:not(:last-child) {
         margin-right: 20px;
+        @include w1023 {
+          margin-right: 10px;
+        }
+      }
+      span {
+        @include w1023 {
+          padding: 7px 20px 10px;
+        }
       }
     }
   }

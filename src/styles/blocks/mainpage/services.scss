@@ -5,16 +5,31 @@
     grid-gap: 20px;
     padding-left: 0;
     list-style: none;
+    @include w1200 {
+      grid-template-columns: repeat(2, calc(50% - 10px));
+    }
+    @include w767 {
+      grid-template-columns: auto;
+      grid-gap: 14px;
+    }
   }
   &__item {
     padding: 34px;
     background-color: var(--card-surface);
     box-shadow: var(--shadow);
     transition: background-color 0.2s, box-shadow 0.2s;
+    @include w1023 {
+      padding: 20px;
+    }
   }
   &-item {
     &__icon {
       margin-bottom: 19px;
+      @include w1023 {
+        width: 90px;
+        height: 54px;
+        margin-bottom: 16px;
+      }
       circle {
         transition: fill 0.2s;
       }
@@ -28,12 +43,26 @@
       line-height: 32px;
       letter-spacing: 0.01em;
       text-transform: uppercase;
+      @include w1023 {
+        margin-bottom: 9px;
+        font-size: 20px;
+        line-height: 27px;
+      }
     }
     &__descr {
       margin-bottom: 20px;
       font-size: 20px;
       line-height: 27px;
       color: var(--text-washy);
+      @include w1023 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        line-height: 24px;
+      }
+      @include w767 {
+        font-size: 16px;
+        line-height: 21px;
+      }
     }
     &__btn {
       padding: 3px 0;
@@ -46,6 +75,11 @@
       font-size: 18px;
       line-height: 22px;
       cursor: pointer;
+      @include w1023 {
+        padding: 2px 0;
+        font-size: 16px;
+        line-height: 23px;
+      }
     }
   }
 }

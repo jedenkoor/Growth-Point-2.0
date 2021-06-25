@@ -24,24 +24,25 @@ block content
           .case-nav__info
             p.case-nav__title Следующий проект
             span.case-nav__category Фарма
-      .case__info.case-info
-        .case-info__row.case-info__row--header 
-          span.case-info__col Заказчик
-          span.case-info__col Сайт
-          span.case-info__col Год
-          span.case-info__col Проект
-          span.case-info__col Работы
-        .case-info__row
-          span.case-info__col Таможенная ertrytryetyкарта
-          span.case-info__col
-            a(href="#")  link
-          span.case-info__col 2020
-          span.case-info__col Спроектировали международный продукт проективк международный продукт, который позволкуцаыв
-          span.case-info__col 
-            span graphic design
-            span UI/UX
-            span frontend
-            span produck dev
+      .case-info__wrap
+        .case__info.case-info
+          .case-info__row.case-info__row--header 
+            span.case-info__col Заказчик
+            span.case-info__col Сайт
+            span.case-info__col Год
+            span.case-info__col Проект
+            span.case-info__col Работы
+          .case-info__row
+            span.case-info__col Таможенная ertrytryetyкарта
+            span.case-info__col
+              a(href="#")  link
+            span.case-info__col 2020
+            span.case-info__col Спроектировали международный продукт проективк международный продукт, который позволкуцаыв
+            span.case-info__col 
+              span graphic design
+              span UI/UX
+              span frontend
+              span produck dev
       .case__slider.case-slider.swiper-container
         .case-slider__wrapper.swiper-wrapper 
           .case-slider__slide.case-slider-slide.swiper-slide
@@ -72,10 +73,29 @@ block content
       picture
         source(type="image/webp" srcset="images/preview.jpg")
         img.case-part__img(src="images/preview.jpg" alt="Балтдорстрой | Главная")
-  section.case-part.margin-section
+  section.case-part
     .container
       .case-part__top 
         h2.case-part__title Каталог
       picture
         source(type="image/webp" srcset="images/preview.jpg")
         img.case-part__img(src="images/preview.jpg" alt="Балтдорстрой | Каталог")
+  section.case.margin-section
+    .container
+      .case__nav.case-nav
+        a.case-nav__col(href="#") 
+          .case-nav__btn
+            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M8.59961 15.0001L12.8663 10.7334M8.59961 15.0001L12.8663 19.2667M8.59961 15.0001H21.9329"/>
+            </svg>
+          .case-nav__info
+            p.case-nav__title Предыдущий проект
+            span.case-nav__category Медицина
+        a.case-nav__col(href="#") 
+          .case-nav__btn
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18.3997 11.9999L14.1331 7.73327M18.3997 11.9999L14.1331 16.2666M18.3997 11.9999L5.06641 11.9999"/>
+            </svg>  
+          .case-nav__info
+            p.case-nav__title Следующий проект
+            span.case-nav__category Фарма

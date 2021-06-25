@@ -2,19 +2,43 @@
   padding: 20px 0;
   background-color: var(--card-surface);
   transition: background-color 0.2s;
+  @include w1023 {
+    margin-bottom: 60px;
+  }
   &__container {
     display: flex;
     align-items: center;
+    @include w1200 {
+      justify-content: space-between;
+    }
+    @include w767 {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__logo {
     flex: 0 0 315px;
     margin-right: 132px;
+    @include w1200 {
+      flex: initial;
+      margin-right: 0;
+    }
   }
   &__link {
     margin-right: auto;
     color: var(--text-washy);
+    @include w1200 {
+      margin-right: 0;
+    }
+    @include w767 {
+      margin: 20px 0;
+    }
   }
   &__copyright {
     color: var(--text-card-caption);
+    @include w767 {
+      font-size: 14px;
+      line-height: 19px;
+    }
   }
 }

@@ -5,6 +5,15 @@
     padding: 18px 0;
     font-size: 20px;
     line-height: 27px;
+    @include w1023 {
+      padding: 14px 0;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    @include w767 {
+      display: block;
+      padding: 14px 0 15px;
+    }
     &:first-of-type {
       padding-top: 0;
     }
@@ -18,6 +27,11 @@
   &__title {
     flex: 0 0 51.2%;
     color: var(--text-caption);
+    @include w767 {
+      margin-bottom: 9px;
+      font-size: 16px;
+      line-height: 21px; 
+    }
   }
   &__text {
     flex: 1;

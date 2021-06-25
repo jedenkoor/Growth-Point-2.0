@@ -77,8 +77,8 @@
           &:nth-child(4) {
             transition-delay: 0.55s;
           }
-          &:not(:last-child) {
-            margin-bottom: 21px;
+          &:nth-child(5) {
+            transition-delay: 0.6s;
           }
         }
       }
@@ -123,7 +123,7 @@
         content: '';
         position: absolute;
         z-index: -1;
-        top: 1px;
+        top: 0;
         left: 0;
         right: 0;
         height: 44px;
@@ -231,6 +231,22 @@
       visibility: hidden;
       transition: 0.3s 0.5s;
     }
+    &__close {
+      position: absolute;
+      top: 16px;
+      right: 16px;
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      @include w1023 {
+        display: block;
+      }
+      path {
+        stroke: var(--text-bright);
+        transition: stroke 0.2s;
+      }
+    }
     &__list {
       position: fixed;
       top: 0;
@@ -245,28 +261,77 @@
       padding-top: 72px;
       padding-left: 112px;
       @include w1023 {
+        transform: translateY(100%);
         right: 0;
+        width: 100%;
+        padding-top: 40px;
+        padding-left: 16px;
       }
+    }
+    &__menu {
+      padding-left: 0;
+      list-style: none;
     }
     &__item {
       display: flex;
+      align-items: center;
       opacity: 0;
       transform: translate3d(0, 10px, 0);
       transition: 0.4s cubic-bezier(0.645, 0.045, 0.355, 1);
+      @include w1023 {
+        padding: 16px 0;
+      }
       &:nth-child(1) {
-        transition-delay: 0.15s;
+        transition-delay: 0.2s;
       }
       &:nth-child(2) {
-        transition-delay: 0.1s;
+        transition-delay: 0.15s;
       }
       &:nth-child(3) {
-        transition-delay: 0.05s;
+        transition-delay: 0.1s;
       }
       &:nth-child(4) {
+        transition-delay: 0.05s;
+      }
+      &:nth-child(5) {
         transition-delay: 0s;
+        align-items: flex-start;
       }
       &:not(:last-child) {
         margin-bottom: 21px;
+        @include w1023 {
+          margin-bottom: 0;
+          border-bottom: 1px solid var(--circle-pale-pale);
+        }
+      }
+      .header-nav {
+        &__socials {
+          display: none;
+          margin-left: auto;
+          margin-right: 16px;
+          @include w1023 {
+            display: flex;
+          }
+        }
+        &__social {
+          &:not(:last-child) {
+            margin-bottom: 0;
+            margin-right: 15px;
+          }
+        }
+        &__theme {
+          margin-bottom: 0;
+          transform: translate(27px, -29px) rotate(-90deg);
+        }
+        &-theme {
+          &__sun,
+          &__moon {
+            transform: rotate(90deg);
+          }
+        }
+        &__lang {
+          transform: translate(82px, 7px);
+        }
       }
     }
     &__link {
@@ -288,6 +353,10 @@
   @include w1023 {
     margin-top: 16px;
     margin-bottom: 33px;
+  }
+  @include w767 {
+    margin-top: 19px;
+    margin-bottom: 37px;
   }
   &__container {
     display: flex;
@@ -326,11 +395,58 @@
   }
 }
 
+.mobile-menu {
+  position: fixed;
+  z-index: 20;
+  bottom: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  background-color: var(--surface-menu);
+  box-shadow: 0px -4px 40px rgba(255, 255, 255, 0.04);
+  transition: background-color 0.2s;
+  @include w1023 {
+    display: block;
+  }
+  &__list {
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+  }
+  &__item {
+    flex: 1;
+  }
+  &__link {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 8px 0 10px;
+    background: none;
+    border: none;
+    color: var(--text-card-caption);
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 16px;
+    cursor: pointer;
+    transition: color 0.2s;
+    svg {
+      margin-bottom: 2px;
+    }
+    path {
+      stroke: var(--text-bright);
+      transition: 0.2s;
+    }
+  }
+}
+
 .dark-theme .header-nav-theme {
   &:before {
     top: 45px;
   }
   &__darkfill {
+    stroke: var(--text-bright);
     fill: var(--text-bright);
   }
 }

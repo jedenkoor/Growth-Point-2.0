@@ -7,28 +7,57 @@
       grid-template-columns: repeat(2, calc(50% - 10px));
       grid-gap: 20px;
     }
+    @include w767 {
+      grid-template-columns: auto;
+      grid-gap: 43px;
+    }
   }
   &__col {
     &:last-child {
       position: relative;
       &:before {
-        content: url('../images/icon-about-decor1.svg');
+        content: '';
         position: absolute;
         top: 261px;
         left: -245px;
         z-index: -1;
+        width: 292px;
+        height: 284px;
+        background: url('../images/icon-about-decor1.svg') center/contain no-repeat;
         @include w1200 {
           top: 50px;
           left: -105px;
         }
+        @include w1023 {
+          top: 135px;
+          left: -65px;
+          width: 171px;
+          height: 198px;
+        }
       }
       &:after {
-        content: url('../images/icon-about-decor2.svg');
+        content: '';
         position: absolute;
         bottom: 36px;
         left: -285px;
         z-index: -1;
+        width: 413px;
+        height: 313px;
+        background: url('../images/icon-about-decor2.svg') center/contain no-repeat;
+        @include w1023 {
+          left: -150px;
+          width: 216px;
+          height: 164px;
+        }
       }
+    }
+  }
+  &__img {
+    @include w767 {
+      margin-left: -16px;
+      margin-right: -16px;
+      width: 100vw;
+      max-width: none;
     }
   }
   &__title {
@@ -40,12 +69,22 @@
     line-height: 39px;
     letter-spacing: 0.01em;
     text-transform: uppercase;
+    @include w1023 {
+      margin-bottom: 9px;
+      font-size: 20px;
+      line-height: 27px;
+    }
   }
   &__text {
     max-width: 538px;
     margin-bottom: 51px;
     font-size: 20px;
     line-height: 27px;
+    @include w1023 {
+      margin-bottom: 20px;
+      font-size: inherit;
+      line-height: inherit;
+    }
     & + .about__title {
       margin-top: 263px;
       @include w1200 {

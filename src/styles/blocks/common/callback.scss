@@ -7,14 +7,24 @@
       grid-template-columns: auto;
       grid-gap: 30px;
     }
+    @include w767 {
+      grid-gap: 43px;
+    }
   }
   &__col {
     &:first-child {
       padding-top: 5px;
+      @include w1023 {
+        padding-top: 2px;
+      }
     }
   }
   &__text {
     margin-bottom: 20px;
+    @include w1023 {
+      max-width: 439px;
+      margin-bottom: 12px;
+    }
   }
   &__socials {
     display: flex;
@@ -45,6 +55,10 @@
       line-height: 32px;
       letter-spacing: 0.01em;
       text-transform: uppercase;
+      @include w1023 {
+        font-size: 20px;
+        line-height: 27px;
+      }
     }
     &__services {
       display: flex;
@@ -52,11 +66,33 @@
       margin-bottom: 8px;
       padding-left: 0;
       list-style: none;
+      @include w1023 {
+        margin-bottom: 20px;
+      }
+      @include w767 {
+        flex-wrap: nowrap;
+        width: 100vw;
+        margin: 0 -16px 23px;
+        padding-left: 16px;
+        overflow-x: auto;
+      }
+      &:after {
+        content: '';
+        flex: 0 0 16px;
+      }
     }
     &-services {
       &__item {
-        margin-right: 20px;
         margin-bottom: 20px;
+        @include w1023 {
+          margin-bottom: 10px;
+        }
+        &:not(:last-child) {
+          margin-right: 20px;
+          @include w1023 {
+            margin-right: 10px;
+          }
+        }
       }
       &__label {
         input {
@@ -73,11 +109,21 @@
         }
         span {
           padding: 7px 29px 11px;
+          white-space: nowrap;
+          @include w1023 {
+            padding: 7px 24px 10px;
+          }
+          @include w767 {
+            padding: 9px 22px 11px;
+          }
         }
       }
     }
     &__input {
       margin-bottom: 28px;
+      @include w1023 {
+        margin-bottom: 14px;
+      }
     }
     &__file {
       display: grid;
@@ -86,13 +132,24 @@
       padding-bottom: 10px;
       border-bottom: 1px solid var(--text-card-caption);
       transition: border-color 0.2s;
+      @include w767 {
+        display: block;
+      }
     }
     &-file {
       &__wrap {
         margin-bottom: 33px;
+        @include w767 {
+          padding-top: 8px;
+        }
       }
       &__label {
         margin-top: 10px;
+        @include w767 {
+          display: inline-block;
+          margin-top: 0;
+          margin-bottom: 15px;
+        }
         span {
           display: flex;
           align-items: center;
@@ -113,6 +170,9 @@
         grid-gap: 10px;
         padding-left: 0;
         list-style: none;
+        @include w767 {
+          grid-template-columns: auto;
+        }
       }
       &-list {
         &__item {
@@ -155,6 +215,11 @@
       font-size: 14px;
       line-height: 19px;
       color: var(--text-caption);
+      @include w1023 {
+        max-width: 420px;
+        font-size: 12px;
+        line-height: 16px;
+      }
       a {
         color: var(--text-bright);
         transition: color 0.2s;
