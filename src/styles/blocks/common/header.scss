@@ -8,8 +8,41 @@
     }
   }
   &__logo {
+    position: relative;
     display: flex;
     width: max-content;
+    @include hover {
+      &:hover:before,
+      &:focus:before {
+        transform: scale(1);
+      }
+      &:active:before {
+        transform: translate3d(0, 2px, 0) scale(0.9);
+        top: -10px;
+      }
+    }
+    @include active {
+      &:active:before {
+        transform: scale(1);
+      }
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--circle-pale);
+      transition: 0.3s;
+      transform: scale(0);
+      transform-origin: center;
+      @include w1023 {
+        width: 45px;
+        height: 45px;
+      }
+    }
     svg {
       @include w1023 {
         width: 133px;
@@ -105,6 +138,17 @@
       background: none;
       border: none;
       cursor: pointer;
+      @include hover {
+        &:hover rect,
+        &:focus rect {
+          fill: var(--primary);
+        }
+      }
+      @include active {
+        &:active rect {
+          fill: var(--primary);
+        }
+      }
       rect {
         fill: var(--text-bright);
         transition: 0.2s;
@@ -119,6 +163,20 @@
       border-radius: 40px;
       cursor: pointer;
       transition: border-color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          border-color: var(--text-bright);
+          &:before {
+            background-color: var(--text-bright);
+          }
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+        }
+      }
       &:before {
         content: '';
         position: absolute;
@@ -157,6 +215,18 @@
       color: var(--text-washy);
       letter-spacing: 0.05em;
       text-transform: uppercase;
+      transition: color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--primary);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+        }
+      }
     }
     &__lk {
       display: flex;
@@ -167,9 +237,21 @@
       border: none;
       cursor: pointer;
       transition: background-color 0.2s;
+      @include hover {
+        &:hover path,
+        &:focus path {
+          fill: var(--text-bright);
+        }
+      }
+      @include active {
+        &:active path {
+          fill: var(--text-bright);
+        }
+      }
       path {
+        fill: transparent;
         stroke: var(--text-bright);
-        transition: stroke 0.2s;
+        transition: 0.2s;
       }
     }
     &__line {
@@ -192,9 +274,27 @@
     &-social {
       &__link {
         display: flex;
+        @include hover {
+          &:hover path,
+          &:focus path {
+            fill: var(--text-bright);
+            &.hoverstroke {
+              stroke: var(--surface-menu);
+            }
+          }
+        }
+        @include active {
+          &:active path {
+            fill: var(--text-bright);
+            &.hoverstroke {
+              stroke: var(--surface-menu);
+            }
+          }
+        }
         path {
+          fill: transparent;
           stroke: var(--text-bright);
-          transition: stroke 0.2s;
+          transition: 0.2s;
         }
       }
     }
@@ -213,6 +313,17 @@
       background: stroke 0.2s;
       cursor: pointer;
       transition: background 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          background-color: var(--primary);
+        }
+      }
+      @include active {
+        &:active {
+          background-color: var(--primary);
+        }
+      }
       path {
         stroke: var(--surface-menu);
         transition: stroke 0.2s;
@@ -319,6 +430,13 @@
             margin-right: 15px;
           }
         }
+        &__theme,
+        &__lang {
+          display: none;
+          @include w1023 {
+            display: block;
+          }
+        }
         &__theme {
           margin-bottom: 0;
           transform: translate(27px, -29px) rotate(-90deg);
@@ -343,6 +461,18 @@
       text-transform: uppercase;
       transition-delay: 0s !important;
       color: var(--text-bright);
+      transition: color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--primary);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+        }
+      }
     }
   }
 }
@@ -376,6 +506,7 @@
     }
   }
   &__link {
+    transition: color 0.2s;
     &:not(a) {
       color: var(--text-caption);
     }
@@ -431,6 +562,23 @@
     line-height: 16px;
     cursor: pointer;
     transition: color 0.2s;
+    @include hover {
+      &:hover,
+      &:focus {
+        color: var(--primary);
+        path {
+          stroke: var(--primary);
+        }
+      }
+    }
+    @include active {
+      &:active {
+        color: var(--primary);
+        path {
+          stroke: var(--primary);
+        }
+      }
+    }
     svg {
       margin-bottom: 2px;
     }
@@ -441,12 +589,42 @@
   }
 }
 
-.dark-theme .header-nav-theme {
+html:not(.dark-theme) .header-nav-theme {
+  @include hover {
+    &:hover,
+    &:focus {
+      .header-nav-theme__sun {
+        path {
+          fill: var(--surface-menu);
+          &.header-nav-theme__lightstroke {
+            fill: none;
+            stroke: var(--surface-menu);
+          }
+        }
+      }
+    }
+  }
+}
+
+html.dark-theme .header-nav-theme {
   &:before {
     top: 45px;
   }
   &__darkfill {
     stroke: var(--text-bright);
     fill: var(--text-bright);
+  }
+  @include hover {
+    &:hover,
+    &:focus {
+      .header-nav-theme__moon {
+        path {
+          &.header-nav-theme__darkfill {
+            fill: var(--surface-menu);
+            stroke: var(--surface-menu);
+          }
+        }
+      }
+    }
   }
 }

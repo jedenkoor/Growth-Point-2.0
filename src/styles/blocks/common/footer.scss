@@ -27,11 +27,23 @@
   &__link {
     margin-right: auto;
     color: var(--text-washy);
+    transition: color 0.2s;
     @include w1200 {
       margin-right: 0;
     }
     @include w767 {
       margin: 20px 0;
+    }
+    @include hover {
+      &:hover,
+      &:focus {
+        color: var(--primary);
+      }
+    }
+    @include active {
+      &:active {
+        color: var(--primary);
+      }
     }
   }
   &__copyright {

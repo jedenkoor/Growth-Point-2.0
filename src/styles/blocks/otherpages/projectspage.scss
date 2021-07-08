@@ -53,6 +53,7 @@
       line-height: 21px;
       color: var(--text-caption);
       cursor: pointer;
+      transition: color 0.2s;
       @include w1023 {
         transform: translateY(-7px);
       }
@@ -63,8 +64,26 @@
         font-size: 14px;
         line-height: 19px;
       }
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--primary);
+          path {
+            stroke: var(--primary);
+          }
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+          path {
+            stroke: var(--primary);
+          }
+        }
+      }
       path {
         stroke: var(--text-caption);
+        transition: stroke 0.2s;
       }
     }
     &__item {

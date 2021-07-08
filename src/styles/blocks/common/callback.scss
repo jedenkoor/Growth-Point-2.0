@@ -25,6 +25,20 @@
       max-width: 439px;
       margin-bottom: 12px;
     }
+    a {
+      transition: 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          color: var(--primary);
+        }
+      }
+      @include active {
+        &:active {
+          color: var(--primary);
+        }
+      }
+    }
   }
   &__socials {
     display: flex;
@@ -39,10 +53,28 @@
     }
     &__link {
       display: flex;
+      @include hover {
+        &:hover path,
+        &:focus path {
+          fill: var(--text-bright);
+          &.hoverstroke {
+            stroke: var(--surface-menu);
+          }
+        }
+      }
+      @include active {
+        &:active path {
+          fill: var(--text-bright);
+          &.hoverstroke {
+            stroke: var(--surface-menu);
+          }
+        }
+      }
     }
     path {
+      fill: transparent;
       stroke: var(--text-bright);
-      transition: stroke 0.2s;
+      transition: 0.2s;
     }
   }
   &-form {
@@ -150,11 +182,38 @@
           margin-top: 0;
           margin-bottom: 15px;
         }
+        input {
+          @include hover {
+            &:focus + span {
+              color: var(--primary);
+              path {
+                stroke: var(--primary);
+              }
+            }
+          }
+        }
         span {
           display: flex;
           align-items: center;
           cursor: pointer;
           white-space: nowrap;
+          transition: color 0.2s;
+          @include hover {
+            &:hover {
+              color: var(--primary);
+              path {
+                stroke: var(--primary);
+              }
+            }
+          }
+          @include active {
+            &:active {
+              color: var(--primary);
+              path {
+                stroke: var(--primary);
+              }
+            }
+          }
         }
         svg {
           margin-left: 9px;
@@ -198,6 +257,17 @@
           background: none;
           border: none;
           cursor: pointer;
+          @include hover {
+            &:hover path,
+            &:focus path {
+              stroke: var(--primary);
+            }
+          }
+          @include active {
+            &:active path {
+              stroke: var(--primary);
+            }
+          }
           path {
             stroke: var(--text-bright);
             transition: stroke 0.2s;
@@ -223,6 +293,17 @@
       a {
         color: var(--text-bright);
         transition: color 0.2s;
+        @include hover {
+          &:hover,
+          &:focus {
+            color: var(--primary);
+          }
+        }
+        @include active {
+          &:active {
+            color: var(--primary);
+          }
+        }
       }
     }
     &__send {

@@ -294,6 +294,23 @@ input {
       border-radius: 50%;
       background-color: var(--button-arrows-surface);
       transition: background-color 0.2s;
+      @include hover {
+        &:hover,
+        &:focus {
+          background-color: var(--secondary);
+          path {
+            stroke: var(--surface);
+          }
+        }
+      }
+      @include active {
+        &:active {
+          background-color: var(--secondary);
+          path {
+            stroke: var(--surface);
+          }
+        }
+      }
       &:after {
         display: none;
       }
@@ -318,10 +335,25 @@ input {
   cursor: pointer;
   background: var(--text-bright);
   color: var(--surface);
-  transition: color 0.2s, background-color 0.2s;
+  transition: 0.2s;
   @include w1023 {
     font-size: 16px;
     line-height: 23px;
+  }
+  @include hover {
+    &:hover,
+    &:focus {
+      background-color: var(--primary);
+    }
+    &:active {
+      transform: translate3d(0, 2px, 0) scale(0.95);
+    }
+  }
+  @include active {
+    &:active {
+      background-color: var(--primary);
+      transform: translate3d(0, 2px, 0) scale(0.95);
+    }
   }
 }
 
@@ -338,10 +370,27 @@ input {
   cursor: pointer;
   background: none;
   color: var(--text-bright);
-  transition: color 0.2s, border-color 0.2s;
+  transition: 0.2s;
   @include w1023 {
     font-size: 16px;
     line-height: 23px;
+  }
+  @include hover {
+    &:hover,
+    &:focus {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    &:active {
+      transform: translate3d(0, 2px, 0) scale(0.95);
+    }
+  }
+  @include active {
+    &:active {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translate3d(0, 2px, 0) scale(0.95);
+    }
   }
 }
 
@@ -349,7 +398,7 @@ input {
   display: inline-block;
   background-color: var(--checkbox-surface);
   border-radius: 30px;
-  transition: background-color 0.2s;
+  transition: 0.2s;
   cursor: pointer;
   @include hover {
     &:hover {

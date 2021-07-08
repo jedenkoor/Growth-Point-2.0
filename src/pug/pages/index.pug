@@ -22,12 +22,13 @@ block content
       border: 1px solid var(--text-bright);
       transition: background-color .1s
     }
-    td:hover{
-      background-color: var(--circle-pale);
-    }
     td a{
       display: block;
       padding: 20px;
+    }
+    td a:hover,
+    td a:focus{
+      background-color: var(--circle-pale);
     }
     @media screen and (max-width: 767px) {
       .map__container{

@@ -15,6 +15,27 @@
     &__col {
       display: flex;
       align-items: center;
+      @include hover {
+        &:hover,
+        &:focus {
+          .case-nav__btn {
+            background-color: var(--primary);
+          }
+          path {
+            stroke: var(--surface);
+          }
+        }
+      }
+      @include active {
+        &:active {
+          .case-nav__btn {
+            background-color: var(--primary);
+          }
+          path {
+            stroke: var(--surface);
+          }
+        }
+      }
       &:nth-child(2n) {
         text-align: right;
         @include w767 {
@@ -52,6 +73,7 @@
       }
       path {
         stroke: var(--text-bright);
+        transition: stroke 0.2s;
       }
     }
     &__title {
@@ -177,6 +199,17 @@
       }
       a {
         color: var(--secondary);
+        @include hover {
+          &:hover,
+          &:focus {
+            text-decoration: underline;
+          }
+        }
+        @include active {
+          &:active {
+            text-decoration: underline;
+          }
+        }
       }
     }
   }
