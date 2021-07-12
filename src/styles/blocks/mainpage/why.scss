@@ -8,7 +8,14 @@
       grid-gap: 20px;
     }
     @include w767 {
-      grid-template-columns: auto;
+      display: block;
+    }
+  }
+  &__col {
+    &:first-child {
+      @include w767 {
+        margin-bottom: 20px;
+      }
     }
   }
   &-slider {
